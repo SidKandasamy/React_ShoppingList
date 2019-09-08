@@ -5,9 +5,14 @@ import PropType from 'prop-types';
 
 class Shoppinglist extends Component {
 
+    markComplete = () => {
+
+         console.log('hello')
+    } 
+
     render(){
         return this.props.shoppinglist.map((shoppinglistmap)=> (
-            <ShoppingListItem key={shoppinglistmap.id} shoppinglist={shoppinglistmap}/>
+            <ShoppingListItem key={shoppinglistmap.id} shoppinglist={shoppinglistmap} markComplete={this.markComplete}/>
         ));
     }
 }
