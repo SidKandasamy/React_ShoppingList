@@ -21,11 +21,14 @@ export class ShoppingListItem extends Component {
    
 
     render() {
+
+        const{ id,title } = this.props.shoppinglist //destructuring desrtructures the this.prop.shoppinglist into just id and title
+
         return (
             <div style={this.getStyle()}> 
                 <p>
-                <input type="checkbox" onChange={this.props.markComplete}/> {''}
-                {this.props.shoppinglist.title}
+                <input type="checkbox" onChange={this.props.markComplete.bind( this, id )}/> {''}
+                {title}
                 </p>
             </div>
         )
@@ -41,6 +44,8 @@ export class ShoppingListItem extends Component {
 
 export default ShoppingListItem
 
+
+//when checking the box we are calling the markComplete render in the shoppingList file, due to it being a prop within the file, it then goes to the App.js file to change the state
 
 //double curly braces when doing inline styling
 //camel case used

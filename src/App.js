@@ -45,12 +45,17 @@ class App extends Component {
       ]
   }
 
+  markComplete = (id) => {
+
+    console.log(id)
+} 
+
   render() {
 
     return (
 
       <div className="App">
-        <Shoppinglist shoppinglist={this.state.shoppinglist}/> 
+        <Shoppinglist shoppinglist={this.state.shoppinglist} markComplete={this.markComplete}/> 
       </div>
 
       );
